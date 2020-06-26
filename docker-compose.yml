@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  database-cliente-service:
+    image: postgres:12.3
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "${CLIENTE_PASSWORD_DB}"
+      POSTGRES_USER: "${CLIENTE_USER_DB}"
+      POSTGRES_DB: "${CLIENTE_NAME_DB}"
+    ports:
+      - 5433:5432
+    volumes:
+      - data_cliente
+
+  database-cidade-service:
+    image: postgres:12.3
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "${CIDADE_PASSWORD_DB}"
+      POSTGRES_USER: "${CIDADE_USER_DB}"
+      POSTGRES_DB: "${CIDADE_NAME_DB}"
+    ports:
+      - 5434:5432
+    volumes:
+      - data_cidade
+
+volumes:
+  data_cliente:
+    driver: local
+
+  data_cidade:
+    driver: local
