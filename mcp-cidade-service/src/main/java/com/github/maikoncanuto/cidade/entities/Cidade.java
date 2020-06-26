@@ -3,6 +3,7 @@ package com.github.maikoncanuto.cidade.entities;
 import com.github.maikoncanuto.cidade.entities.enums.UF;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table(name = "TB_CIDADE")
 @Getter
 @Setter
+@ToString
 public class Cidade implements Serializable {
 
     @Id
