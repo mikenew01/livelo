@@ -22,12 +22,8 @@ public class CidadeService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CidadeService.class);
 
-    private final CidadeRepository cidadeRepository;
-
     @Autowired
-    public CidadeService(CidadeRepository cidadeRepository) {
-        this.cidadeRepository = cidadeRepository;
-    }
+    private CidadeRepository cidadeRepository;
 
     @Transactional(propagation = REQUIRED)
     public ResponseDTO<Cidade> save(final Cidade cidade) {

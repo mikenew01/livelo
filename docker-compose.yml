@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: "${CLIENTE_USER_DB}"
       POSTGRES_DB: "${CLIENTE_NAME_DB}"
     ports:
-      - 5433:5432
+      - ${CLIENTE_PORT_DB}:5432
     volumes:
       - data_cliente
 
@@ -21,7 +21,7 @@ services:
       POSTGRES_USER: "${CIDADE_USER_DB}"
       POSTGRES_DB: "${CIDADE_NAME_DB}"
     ports:
-      - 5434:5432
+      - ${CIDADE_PORT_DB}:5432
     volumes:
       - data_cidade
 

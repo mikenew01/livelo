@@ -22,15 +22,11 @@ public class CidadeResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CidadeResource.class);
 
-    private final CidadeService cidadeService;
-
     @Autowired
-    public CidadeResource(CidadeService cidadeService) {
-        this.cidadeService = cidadeService;
-    }
+    private CidadeService cidadeService;
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody Cidade cidade) {
+    public ResponseEntity<?> create(@RequestBody final Cidade cidade) {
         LOGGER.info(format("[CidadeResource-create] - request %s", cidade));
         final ResponseDTO<Cidade> response = cidadeService.save(cidade);
         return new ResponseEntity<>(response, CREATED);
